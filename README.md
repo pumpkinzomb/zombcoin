@@ -31,5 +31,10 @@ source ~/.profile
 go version
 ```
   
-- Git clone this repository and install dependencies by go module.
-  
+- Git clone this repository and install dependencies by go module.  
+
+## Steps of Course  
+- I followed steps with commit messages  
+
+1. Make an module of blockchain
+2. Build a explorer server for viewing blockchain's data
