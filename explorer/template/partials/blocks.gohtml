@@ -1,0 +1,17 @@
+{{define "blocks"}}
+    <h1>Block information</h1>
+    {{ range $i, $e := . }}
+    <ul>
+        <li>
+            <b>Prev Hash:</b>
+            {{if .PrevHash}}
+            {{.PrevHash}}
+            {{else }}
+            "-"
+            {{ end }}
+        </li>
+        <li><b>Hash:</b> {{.Hash}}</li>
+        <li><b>Data:</b>{{.Data}}</li>
+    </ul>
+    {{ end }}
+{{end}}
