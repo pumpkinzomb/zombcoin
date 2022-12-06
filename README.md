@@ -2,7 +2,7 @@
 
 ## How to start this.  
 
-This repository is based on nomadcoder's lectures. If you want to find the course, you can find [here].(https://nomadcoders.co/nomadcoin).  
+This repository is based on nomadcoder's lectures. If you want to find the course, you can find [here](https://nomadcoders.co/nomadcoin).  
    
 - Install Go
   
