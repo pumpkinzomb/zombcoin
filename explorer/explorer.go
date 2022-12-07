@@ -10,7 +10,6 @@ import (
 )
 
 const (
-	port = ":4000"
 	templateDir = "explorer/template/"
 )
 
@@ -38,13 +37,15 @@ func homeHandler (w http.ResponseWriter, r *http.Request) {
 	templates.ExecuteTemplate(w, "home", data)
 }
 
-func Run () {
+func Run (_port int) {
 	templates = template.Must(template.ParseGlob(templateDir + "pages/*.gohtml"))
 	templates = template.Must(templates.ParseGlob(templateDir + "partials/*.gohtml"))
 
-	http.HandleFunc("/", homeHandler)
-	http.HandleFunc("/add", addBlockHandler)
+	handler := http.NewServeMux()
+
+	handler.HandleFunc("/", homeHandler)
+	handler.HandleFunc("/add", addBlockHandler)
 	
-	fmt.Printf("Server is inited on localhost%s\n", port)
-	log.Fatal(http.ListenAndServe(port, nil))
+	fmt.Printf("Server is inited on localhost:%d\n", _port)
+	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%d", _port), handler))
 }
