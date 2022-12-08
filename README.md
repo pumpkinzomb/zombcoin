@@ -41,3 +41,4 @@ go version
 1. Make an module of blockchain
 2. Build a explorer server for viewing blockchain's data
 3. Pre-Build a rest API server for communicate with blockchain modules. (Use gorilla-mux dependency)
+4. Make for command line interface for api server & explorer
